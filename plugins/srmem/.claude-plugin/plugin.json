@@ -1,0 +1,24 @@
+{
+  "name": "srmem",
+  "version": "0.2.0",
+  "description": "Team memory: the right memory before the mistake, lessons saved when you correct the agent",
+  "author": {
+    "name": "Srino Systems eU",
+    "email": "info@srino.net"
+  },
+  "userConfig": {
+    "server": {
+      "type": "string",
+      "title": "Server URL",
+      "description": "Your srmem server, shown in the dashboard under Connect, Claude Code (no trailing slash)",
+      "required": true
+    },
+    "token": {
+      "type": "string",
+      "title": "Device token",
+      "description": "Created in the dashboard under Connect, Claude Code; shown once",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

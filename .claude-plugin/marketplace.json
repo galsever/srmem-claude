@@ -1,0 +1,15 @@
+{
+  "name": "srmem",
+  "description": "srmem: team memory for Claude Code",
+  "owner": {
+    "name": "Srino Systems eU",
+    "email": "info@srino.net"
+  },
+  "plugins": [
+    {
+      "name": "srmem",
+      "source": "./plugins/srmem",
+      "description": "Pushes the right memory before the agent makes the mistake and saves lessons when you correct it"
+    }
+  ]
+}

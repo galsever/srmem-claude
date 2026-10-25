@@ -1,0 +1,81 @@
+{
+  "description": "srmem: memory push on session start, prompt, tool batch and shell command, lesson nudge on Stop. Exec form (no shell) of the bundled srmem-hook helper: it reads server and token from its environment (never from args), posts stdin to <server>/v1/hook/<event>, fails open (exit 0, no output) on any error.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/bin/srmem-hook",
+            "args": [
+              "session-start",
+              "3"
+            ],
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/bin/srmem-hook",
+            "args": [
+              "user-prompt-submit",
+              "2"
+            ],
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PostToolBatch": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/bin/srmem-hook",
+            "args": [
+              "post-tool-batch",
+              "2"
+            ],
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/bin/srmem-hook",
+            "args": [
+              "pre-tool-use",
+              "1"
+            ],
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/bin/srmem-hook",
+            "args": [
+              "stop",
+              "1"
+            ],
+            "timeout": 2
+          }
+        ]
+      }
+    ]
+  }
+}

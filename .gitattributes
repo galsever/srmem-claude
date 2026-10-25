@@ -1,0 +1,2 @@
+plugins/srmem/hooks/bin/*/srmem-hook binary
+plugins/srmem/hooks/bin/srmem-hook.exe binary

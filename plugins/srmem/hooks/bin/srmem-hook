@@ -1,0 +1,18 @@
+#!/bin/sh
+# Launcher for macOS and Linux: runs the srmem-hook binary for this OS and CPU (hooks.json cannot vary by OS).
+# On Windows Claude Code starts srmem-hook.exe next to this file instead (exec form appends .exe).
+# Fail open: an unknown platform or a missing binary exits 0 without output.
+dir=$(dirname "$0")
+case $(uname -s) in
+  Linux) os=linux ;;
+  Darwin) os=darwin ;;
+  *) exit 0 ;;
+esac
+case $(uname -m) in
+  x86_64 | amd64) arch=amd64 ;;
+  aarch64 | arm64) arch=arm64 ;;
+  *) exit 0 ;;
+esac
+bin="$dir/$os-$arch/srmem-hook"
+[ -x "$bin" ] || exit 0
+exec "$bin" "$@"
