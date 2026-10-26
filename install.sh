@@ -1,6 +1,6 @@
 #!/bin/sh
 # Installs mastermem's hooks and MCP into Codex or Cursor (macOS, Linux). The dashboard shows this line:
-#   curl -fsSL https://raw.githubusercontent.com/galsever/srmem-claude/main/install.sh | sh -s -- codex <server> <token>
+#   curl -fsSL https://raw.githubusercontent.com/mastermem/mastermem-claude/main/install.sh | sh -s -- codex <server> <token>
 # It downloads srmem-hook for this machine and runs `srmem-hook install <client> --server <server>` with the token
 # on stdin; the helper copies itself into the client's config dir, so the download is removed afterwards.
 set -eu
@@ -27,7 +27,7 @@ case "$os" in linux | darwin) ;; *)
   exit 1
   ;;
 esac
-base=${SRMEM_HOOK_BASE:-https://raw.githubusercontent.com/galsever/srmem-claude/main/plugins/srmem/hooks/bin}
+base=${SRMEM_HOOK_BASE:-https://raw.githubusercontent.com/mastermem/mastermem-claude/main/plugins/srmem/hooks/bin}
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
 curl -fsSLo "$tmp/srmem-hook" "$base/$os-$arch/srmem-hook"

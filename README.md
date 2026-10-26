@@ -10,13 +10,13 @@ Create a device token in the mastermem dashboard (https://mastermem.com under Co
 in a terminal:
 
 ```
-claude plugin marketplace add galsever/srmem-claude
+claude plugin marketplace add mastermem/mastermem-claude
 claude plugin install srmem@srmem --config server=https://mastermem.com --config token=<device token>
 ```
 
 Restart Claude Code (or run `/reload-plugins` in a running session).
 
-Inside Claude Code instead: `/plugin marketplace add galsever/srmem-claude`, then `/plugin install srmem@srmem`;
+Inside Claude Code instead: `/plugin marketplace add mastermem/mastermem-claude`, then `/plugin install srmem@srmem`;
 the dialog asks for the server URL and the token.
 
 New token (rotation, another team): run the `claude plugin install` line again with the new token, or
