@@ -1,12 +1,12 @@
 #!/bin/sh
-# Installs srmem's hooks and MCP into Codex or Cursor (macOS, Linux). The dashboard shows this line:
+# Installs mastermem's hooks and MCP into Codex or Cursor (macOS, Linux). The dashboard shows this line:
 #   curl -fsSL https://raw.githubusercontent.com/galsever/srmem-claude/main/install.sh | sh -s -- codex <server> <token>
 # It downloads srmem-hook for this machine and runs `srmem-hook install <client> --server <server>` with the token
 # on stdin; the helper copies itself into the client's config dir, so the download is removed afterwards.
 set -eu
 client=${1:-}
 server=${2:-}
-token=${3:-${SRMEM_TOKEN:-}}
+token=${3:-${MASTERMEM_TOKEN:-${SRMEM_TOKEN:-}}}
 case "$client" in codex | cursor) ;; *)
   echo "usage: install.sh codex|cursor <server> <token>" >&2
   exit 2
@@ -18,12 +18,12 @@ esac
 }
 os=$(uname -s | tr '[:upper:]' '[:lower:]')
 case "$(uname -m)" in x86_64 | amd64) arch=amd64 ;; arm64 | aarch64) arch=arm64 ;; *)
-  echo "srmem: unsupported CPU $(uname -m)" >&2
+  echo "mastermem: unsupported CPU $(uname -m)" >&2
   exit 1
   ;;
 esac
 case "$os" in linux | darwin) ;; *)
-  echo "srmem: unsupported system $os (Windows: see the README)" >&2
+  echo "mastermem: unsupported system $os (Windows: see the README)" >&2
   exit 1
   ;;
 esac

@@ -1,15 +1,17 @@
-# srmem for Claude Code
+# mastermem for Claude Code
 
 Team memory for Claude Code: the right memory before the agent makes the mistake, lessons saved when you
-correct it. This repository is a Claude Code plugin marketplace with one plugin, `srmem`.
+correct it. This repository is a Claude Code plugin marketplace with one plugin, `srmem` (the id from
+before the rename to mastermem; it stays so existing installs keep working).
 
 ## Install
 
-Create a device token in the srmem dashboard (Connect, Claude Code). Then, in a terminal:
+Create a device token in the mastermem dashboard (https://mastermem.com under Connect, Claude Code). Then,
+in a terminal:
 
 ```
 claude plugin marketplace add galsever/srmem-claude
-claude plugin install srmem@srmem --config server=https://<your srmem server> --config token=<device token>
+claude plugin install srmem@srmem --config server=https://mastermem.com --config token=<device token>
 ```
 
 Restart Claude Code (or run `/reload-plugins` in a running session).
@@ -25,7 +27,8 @@ New token (rotation, another team): run the `claude plugin install` line again w
 - Hooks on session start, prompt, tool batch, shell commands (Bash, PowerShell) and Stop send the hook
   event to `<server>/v1/hook/<event>`; the answer adds the matching memories to the agent's context and
   asks for a lesson after a correction.
-- The `srmem` MCP server (`<server>/mcp`) gives the agent the memory tools.
+- The MCP server (`<server>/mcp`, named `srmem` in Claude Code, so the tools stay `mcp__srmem__*`) gives the
+  agent the memory tools.
 
 When the server is down or slow, Claude Code keeps working without memories: every hook gives up after
 1 to 3 seconds and never blocks.
@@ -47,5 +50,5 @@ claude plugin uninstall srmem@srmem
 claude plugin marketplace remove srmem
 ```
 
-Had the older srmem client installed (`srmem install --remote`)? Run `srmem uninstall` first, or every hook
+Had the older srmem command line client installed (`srmem install --remote`)? Run `srmem uninstall` first, or every hook
 fires twice.

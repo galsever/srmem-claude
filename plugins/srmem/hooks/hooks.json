@@ -1,5 +1,5 @@
 {
-  "description": "srmem: memory push on session start, prompt, tool batch and shell command, lesson nudge on Stop. Exec form (no shell) of the bundled srmem-hook helper: it reads server and token from its environment (never from args), posts stdin to <server>/v1/hook/<event>, fails open (exit 0, no output) on any error.",
+  "description": "mastermem: memory push on session start, prompt, tool batch and shell command, team rules on every tool call, lesson nudge and turn end rules on Stop, turn end rules of subagents on SubagentStop. Exec form (no shell) of the bundled srmem-hook helper: it reads server and token from its environment (never from args), posts stdin to <server>/v1/hook/<event>, fails open (exit 0, no output) on any error.",
   "hooks": {
     "SessionStart": [
       {
@@ -48,7 +48,7 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "Bash|PowerShell",
+        "matcher": "*",
         "hooks": [
           {
             "type": "command",
@@ -70,6 +70,21 @@
             "command": "${CLAUDE_PLUGIN_ROOT}/hooks/bin/srmem-hook",
             "args": [
               "stop",
+              "1"
+            ],
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/bin/srmem-hook",
+            "args": [
+              "subagent-stop",
               "1"
             ],
             "timeout": 2

@@ -1,7 +1,7 @@
 {
   "name": "srmem",
-  "version": "0.2.1",
-  "description": "Team memory: the right memory before the mistake, lessons saved when you correct the agent",
+  "version": "0.3.0",
+  "description": "mastermem team memory: the right memory before the mistake, lessons saved when you correct the agent",
   "author": {
     "name": "Srino Systems eU",
     "email": "info@srino.net"
@@ -10,7 +10,8 @@
     "server": {
       "type": "string",
       "title": "Server URL",
-      "description": "Your srmem server, shown in the dashboard under Connect, Claude Code (no trailing slash)",
+      "description": "Your mastermem server, shown in the dashboard under Connect, Claude Code (no trailing slash)",
+      "default": "https://mastermem.com",
       "required": true
     },
     "token": {
