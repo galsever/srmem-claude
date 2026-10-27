@@ -1,6 +1,6 @@
 #!/bin/sh
-# Launcher for macOS and Linux: runs the srmem-hook binary for this OS and CPU (hooks.json cannot vary by OS).
-# On Windows Claude Code starts srmem-hook.exe next to this file instead (exec form appends .exe).
+# Launcher for macOS and Linux: runs the mastermem-hook binary for this OS and CPU (hooks.json cannot vary by OS).
+# On Windows Claude Code starts mastermem-hook.exe next to this file instead (exec form appends .exe).
 # Fail open: an unknown platform or a missing binary exits 0 without output.
 dir=$(dirname "$0")
 case $(uname -s) in
@@ -13,6 +13,6 @@ case $(uname -m) in
   aarch64 | arm64) arch=arm64 ;;
   *) exit 0 ;;
 esac
-bin="$dir/$os-$arch/srmem-hook"
+bin="$dir/$os-$arch/mastermem-hook"
 [ -x "$bin" ] || exit 0
 exec "$bin" "$@"

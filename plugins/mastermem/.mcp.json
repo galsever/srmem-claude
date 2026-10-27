@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "srmem": {
+    "mastermem": {
       "type": "http",
       "url": "${user_config.server}/mcp",
       "headers": {

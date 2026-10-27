@@ -1,5 +1,5 @@
 {
-  "name": "srmem",
+  "name": "mastermem",
   "description": "mastermem: team memory for Claude Code",
   "owner": {
     "name": "Srino Systems eU",
@@ -7,8 +7,8 @@
   },
   "plugins": [
     {
-      "name": "srmem",
-      "source": "./plugins/srmem",
+      "name": "mastermem",
+      "source": "./plugins/mastermem",
       "description": "Pushes the right memory before the agent makes the mistake and saves lessons when you correct it"
     }
   ]

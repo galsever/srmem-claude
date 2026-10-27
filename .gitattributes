@@ -1,2 +1,2 @@
-plugins/srmem/hooks/bin/*/srmem-hook binary
-plugins/srmem/hooks/bin/srmem-hook.exe binary
+plugins/mastermem/hooks/bin/*/mastermem-hook binary
+plugins/mastermem/hooks/bin/mastermem-hook.exe binary
