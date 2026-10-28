@@ -10,16 +10,12 @@ in a terminal:
 
 ```
 claude plugin marketplace add mastermem/mastermem-claude
-claude plugin install mastermem@mastermem --config server=https://mastermem.com --config token=<device token>
 ```
 
-Restart Claude Code (or run `/reload-plugins` in a running session).
+Inside Claude Code: `/plugin install mastermem@mastermem`; the dialog asks for the server URL and the token
+(so the token stays out of your shell history). Restart Claude Code (or run `/reload-plugins`).
 
-Inside Claude Code instead: `/plugin marketplace add mastermem/mastermem-claude`, then `/plugin install mastermem@mastermem`;
-the dialog asks for the server URL and the token.
-
-New token (rotation, another team): run the `claude plugin install` line again with the new token, or
-`/plugin configure mastermem@mastermem`.
+New token (rotation, another team): `/plugin configure mastermem@mastermem`.
 
 ## What it does
 
