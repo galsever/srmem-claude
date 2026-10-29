@@ -1,6 +1,6 @@
 {
   "name": "mastermem",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "mastermem team memory: the right memory before the mistake, lessons saved when you correct the agent",
   "author": {
     "name": "Srino Systems eU",
@@ -10,15 +10,8 @@
     "server": {
       "type": "string",
       "title": "Server URL",
-      "description": "Your mastermem server, shown in the dashboard under Connect, Claude Code (no trailing slash)",
+      "description": "Your mastermem server (no trailing slash); keep the default for mastermem.com",
       "default": "https://mastermem.com",
-      "required": true
-    },
-    "token": {
-      "type": "string",
-      "title": "Device token",
-      "description": "Created in the dashboard under Connect, Claude Code; shown once",
-      "sensitive": true,
       "required": true
     }
   }

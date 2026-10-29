@@ -5,17 +5,17 @@ correct it. This repository is a Claude Code plugin marketplace with one plugin,
 
 ## Install
 
-Create a device token in the mastermem dashboard (https://mastermem.com under Connect, Claude Code). Then,
-in a terminal:
+In a terminal:
 
 ```
 claude plugin marketplace add mastermem/mastermem-claude
 ```
 
-Inside Claude Code: `/plugin install mastermem@mastermem`; the dialog asks for the server URL and the token
-(so the token stays out of your shell history). Restart Claude Code (or run `/reload-plugins`).
+Inside Claude Code: `/plugin install mastermem@mastermem`, then restart Claude Code. The first session opens
+mastermem in the browser (or shows the link): approve it and pick the team. The token goes into
+`~/.config/mastermem/claude.json` (0600).
 
-New token (rotation, another team): `/plugin configure mastermem@mastermem`.
+Another team or a revoked token: delete that file and start a new session.
 
 ## What it does
 

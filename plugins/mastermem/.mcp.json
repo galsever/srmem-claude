@@ -3,9 +3,7 @@
     "mastermem": {
       "type": "http",
       "url": "${user_config.server}/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.token}"
-      }
+      "headersHelper": "\"${CLAUDE_PLUGIN_ROOT}/hooks/bin/mastermem-hook\" mcp-headers --client claude"
     }
   }
 }
