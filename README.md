@@ -8,11 +8,12 @@ correct it. This repository is a Claude Code plugin marketplace with one plugin,
 In a terminal:
 
 ```
-claude plugin marketplace add mastermem/mastermem-claude
+claude plugin marketplace add mastermem/mastermem-claude; claude plugin install mastermem@mastermem
 ```
 
-Inside Claude Code: `/plugin install mastermem@mastermem`, then restart Claude Code. The first session opens
-mastermem in the browser (or shows the link): approve it and pick the team. The token goes into
+Then start Claude Code: it opens mastermem in the browser (or shows the link). Approve it and pick the team; the
+MCP tools work in that same session (the helper makes the device token before the login and the MCP connection
+sends it from the start, the server creates it on approve). The token goes into
 `~/.config/mastermem/claude.json` (0600).
 
 Another team or a revoked token: delete that file and start a new session.
