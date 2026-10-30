@@ -1,6 +1,6 @@
 {
   "name": "mastermem",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "mastermem team memory: the right memory before the mistake, lessons saved when you correct the agent",
   "author": {
     "name": "Srino Systems eU",
@@ -12,7 +12,7 @@
       "title": "Server URL",
       "description": "Your mastermem server (no trailing slash); keep the default for mastermem.com",
       "default": "https://mastermem.com",
-      "required": true
+      "required": false
     }
   }
 }
